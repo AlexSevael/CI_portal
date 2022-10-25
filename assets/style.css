@@ -205,3 +205,9 @@ button.add_new{
   color: #fff;
   transition: all .7s;
 }
+
+/* add user master  */
+.add_user_class{
+  font-size: 21px;
+  font-weight: 600;
+}
