@@ -7,7 +7,7 @@ function homepage(){
 function user_master_page(){
    window.location = 'index.html';
 }
-function partconsumtoin_page(){
+function partconsumptoin_page(){
    window.location = 'partconsumption.html';
 }
 function add_new(){
