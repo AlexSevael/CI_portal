@@ -31,7 +31,7 @@
                          
                         </div>
                         <div class="col-md-6 text-end p-0">
-                            <button class="add_new" onclick="add_new()">+ Add New</button>
+                            <a href="#popup" class="add_new">+ Add New</a>
                         </div>
                     </div>
                     <section class="table_bg">
@@ -228,3 +228,97 @@
         </div>
     </section>
 </div>
+
+    <!--popup-->
+<div id="popup" class="popup-container">
+    <div class="popup-content">
+      <!-- <a href="#" class="close">&times;</a> -->
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Add User</h3>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <label for="fistName" class="form-label">First Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control input_fields" id="fistName" placeholder="First Name">
+            </div>
+            <div class="col-md-3">
+                <label for="lastName" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control input_fields" id="lastName" placeholder="Last Name">
+            </div>
+            <div class="col-md-3">
+                <label for="email" class="form-label">Email <span style="color: red;">*</span></label>
+                <input type="text" class="form-control input_fields" id="email" placeholder="Email">
+            </div>
+            <div class="col-md-3">
+                <label for="phoneNo" class="form-label">Phone No <span style="color: red;">*</span></label>
+                <input type="number" class="form-control input_fields" id="phoneNo" placeholder="Phone No">
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <label for="mobileNo" class="form-label">Mobile No <span style="color: red;">*</span></label>
+                <input type="text" class="form-control input_fields" maxlength="10" id="mobileNo" placeholder="Mobile No">
+            </div>
+            <div class="col-md-3">
+                <label for="shortID" class="form-label">Short ID <span style="color: red;">*</span></label>
+                <input type="text" class="form-control input_fields" id="shortID" placeholder="Short ID">
+            </div>
+            <div class="col-md-2">
+                <label for="ext" class="form-label">Ext <span style="color: red;">*</span></label>
+                <input type="text" class="form-control input_fields" id="ext" placeholder="Ext">
+            </div>
+            <div class="col-md-4 mt-4 pt-1">
+                <label class="form-label" style="cursor: pointer;">
+                    <input type="radio" name="radio" style="cursor: pointer;"/>
+                    Assigner
+                  </label>
+                  
+                  <label class="form-label" style="cursor: pointer;">
+                    <input type="radio" name="radio" style="cursor: pointer;" />
+                    Planner
+                  </label>
+
+                  <label class="form-label" style="cursor: pointer;">
+                    <input type="radio" name="radio" style="cursor: pointer;" />
+                    Stack Holder
+                  </label>
+            </div>
+        </div>
+         <div class="row mt-4">
+            <div class="col-md-3">
+                <label for="stackHolder" class="form-label">Stack Holder</label>
+                <select class="form-control input_fields" id="stackHolder">
+                    <option value="null">--Select--</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="level" class="form-label">Level</label>
+                <select class="form-control input_fields" id="level">
+                    <option value="null">--Select--</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="subFunction" class="form-label">Sub Function</label>
+                <select class="form-control input_fields" id="subFunction">
+                    <option value="null">--Select--</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="reportingTo" class="form-label">Reporting To</label>
+                <select class="form-control input_fields" id="reportingTo">
+                    <option value="null">--Select--</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-end">
+                <button class="popup_close" onclick="save_close()">Close</button>
+                <button class="popup_save" onclick="save_close()">Save</button>
+            </div>
+        </div>
+     </div>
+    </div>
+  </div>

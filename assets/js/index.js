@@ -19,3 +19,7 @@ function clickFun() {
 function back_add_user(){
    user_master_page()
 }
+
+function save_close(){
+   window.location = '#';
+}
