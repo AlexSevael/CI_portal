@@ -284,6 +284,11 @@ border-color: #043b54 !important;
     list-style: none;
     outline: 0;
     display: none;
+    transition: all .3s;
+}
+.itel_list:hover{
+  transform: scale(1.1);
+  color: #043b54 ;
 }
 #menu li {
     width: 230px;
