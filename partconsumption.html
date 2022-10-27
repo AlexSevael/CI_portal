@@ -23,15 +23,24 @@
 <body style="background-color: #f5f6f1;">
     <div class="container-fluid bg_color">
         <div class="row">
+            <input type="checkbox" id="menu-toggle"/>
+            <label id="trigger" for="menu-toggle"></label>
+            <label id="burger" for="menu-toggle"></label>
+            <ul id="menu">
+                <li><a class="itel_list" href="kem.html">KEM</a></li>
+                <li><a class="itel_list" href="user_master.html">User Master</a></li>
+                <li><a class="itel_list" href="partconsumption.html">Part Consumption</a></li>
+            </ul>
             <div class="col-md-12 p-0">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 bg_image">
                             <div class="row mt-2">
-                                <div class="col-md-6">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4 text-center">
                                     <img src="assets/images/logo.png" class="logo" alt="" onclick="homepage()">
                                 </div>
-                                <div class="col-md-6 text-end pt-1">
+                                <div class="col-md-4 text-end pt-1">
                                     <img src="assets/images/logout.png" title="Logout" class="logout" alt="" onclick="logout()">
                                 </div>
                             </div>
