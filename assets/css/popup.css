@@ -73,6 +73,7 @@
   visibility: visible;
   opacity: 1;
   transform: scale(1);
+  z-index: 10;
 }
 
 .popup-container h3{
