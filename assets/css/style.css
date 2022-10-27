@@ -171,7 +171,7 @@ tr:hover {
   color: #fff;
   transition: all .7s;
 }
-a.add_new{
+.add_new{
   border: none;
     background: #043b54;
     border-radius: 4px;
@@ -218,3 +218,31 @@ a.add_new{
   font-size: 21px;
   font-weight: 600;
 }
+
+/* search box  */
+
+
+.height{
+  height: 100vh;
+ }
+ .search {
+  position: absolute;
+  box-shadow: 0 0 40px rgb(51 51 51 / 10%);
+  width: 100%;
+  right: -48px;
+}
+ .search input{
+  height: 32px;
+  text-indent: 0px;
+  border: 2px solid #d6d4d4;
+ }
+ .search input:focus{
+box-shadow: none;
+border-color: #043b54 !important;
+ }
+ .search .fa-search{
+  position: absolute;
+  top: 20px;
+  left: 16px;
+
+ }
