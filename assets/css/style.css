@@ -35,6 +35,12 @@
     top: 0;
     background-repeat: no-repeat;
 }
+.bg_image{
+  background-image: url("/assets/images/innerpagetopbg.jpg");
+    background-repeat: no-repeat;
+    height: 45px;
+    
+}
 .login_image{
     width: 56%;
     position: absolute;
