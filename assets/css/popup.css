@@ -80,7 +80,7 @@
   font-size: 20px;
   border-bottom: 1px solid #e5e5e9;
 }
-input.input_fields:focus {
+input.input_fields:focus,textarea.input_fields:focus {
   transform: scale(1.1);
   box-shadow: none;
   width: 100%;

@@ -61,7 +61,7 @@
                                                   </div>
                                             </div>
                                             <div class="col-md-4 text-end p-0">
-                                                <a href="#popup" class="add_new">+ Add New</a>
+                                                <a href="#Add_Part_Number" class="add_new">+ Add New</a>
                                                 <button class="add_new" style="padding: 5px 9px;">Csv Upload</button>
                                                 <button class="add_new" style="padding: 5px 9px;">Delete</button>
                                                 <button class="add_new" style="padding: 5px 9px;">Delegate</button>
@@ -260,7 +260,7 @@
                 </div>
                 
                     <!--popup-->
-                <div id="popup" class="popup-container">
+                <div id="Add_Part_Number" class="popup-container">
                     <div class="popup-content">
                       <!-- <a href="#" class="close">&times;</a> -->
                      <div class="container-fluid">
@@ -271,16 +271,18 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-4">
-                                <label for="fistName" class="form-label">First Name <span style="color: red;">*</span></label>
-                                <input type="text" class="form-control input_fields" id="fistName" placeholder="Enter...">
+                                <label for="kemNo" class="form-label">KEM No</label>
+                                <input type="text" class="form-control input_fields" id="kemNo" placeholder="Enter...">
                             </div>
                             <div class="col-md-4">
-                                <label for="lastName" class="form-label">Last Name <span style="color: red;">*</span></label>
-                                <input type="text" class="form-control input_fields" id="lastName" placeholder="Enter...">
+                                <label for="crNo" class="form-label">CR No</label>
+                                <input type="text" class="form-control input_fields" id="crNo" placeholder="Enter...">
                             </div>
                             <div class="col-md-4">
-                                <label for="email" class="form-label">Email <span style="color: red;">*</span></label>
-                                <input type="text" class="form-control input_fields" id="email" placeholder="Enter...">
+                                <label for="Project" class="form-label">Project</label>
+                                <select class="form-control input_fields" id="Project">
+                                    <option value="null">--Select--</option>
+                                </select>
                             </div>
                             <!-- <div class="col-md-3">
                                 <label for="mobileNo" class="form-label">Mobile No <span style="color: red;">*</span></label>
@@ -290,47 +292,39 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-md-4">
-                                <label for="shortID" class="form-label">Short ID <span style="color: red;">*</span></label>
-                                <input type="text" class="form-control input_fields" id="shortID" placeholder="Enter...">
+                                <label for="shop" class="form-label">Shop <span style="color: red;">*</span></label>
+                                <input type="text" class="form-control input_fields" id="shop" placeholder="Enter...">
                             </div>
                             <div class="col-md-4">
-                                <label for="stackHolder" class="form-label">Stack Holder</label>
-                                <select class="form-control input_fields" id="stackHolder">
-                                    <option value="null">--Select--</option>
-                                </select>
+                                <label for="coKem" class="form-label">Co KEM</label>
+                                <input type="text" class="form-control input_fields" id="coKem" placeholder="Enter...">
                             </div>
                             <div class="col-md-4">
-                                <label for="stackHolder" class="form-label">Stack Holder</label>
-                                <select class="form-control input_fields" id="stackHolder">
-                                    <option value="null">--Select--</option>
-                                </select>
+                                <label for="remark" class="form-label">Remarks</label>
+                                <textarea class="form-control input_fields" id="Remarks" style="height: 38px;"></textarea>
                             </div>
                         </div>
                          <div class="row mt-4">
                             <div class="col-md-4">
-                                <label for="level" class="form-label">Level</label>
-                                <select class="form-control input_fields" id="level">
+                                <label for="description" class="form-label">Description</label>
+                                <input type="text" class="form-control input_fields" id="description" placeholder="Enter...">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="category" class="form-label">Category <span style="color: red;">*</span></label>
+                                <select class="form-control input_fields" id="category">
                                     <option value="null">--Select--</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="subFunction" class="form-label">Sub Function</label>
-                                <select class="form-control input_fields" id="subFunction">
-                                    <option value="null">--Select--</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="reportingTo" class="form-label">Reporting To</label>
-                                <select class="form-control input_fields" id="reportingTo">
-                                    <option value="null">--Select--</option>
-                                </select>
+                                <label for="affected_model" class="form-label">Affected Model <span style="color: red;">*</span></label>
+                                <input type="text" class="form-control input_fields" id="affected_model" placeholder="Enter...">
                             </div>
                            
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-4">
-                                <label for="stackHolder" class="form-label">Reporting L3</label>
-                                <select class="form-control input_fields" id="stackHolder">
+                                <label for="market" class="form-label">Market <span style="color: red;">*</span></label>
+                                <select class="form-control input_fields" id="market">
                                     <option value="null">--Select--</option>
                                 </select>
                             </div>
