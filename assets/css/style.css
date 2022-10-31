@@ -364,6 +364,9 @@ border-color: #043b54 !important;
 #menu-toggle:checked + #trigger ~ #menu > li, .itel_list {
   display: block;
 }
-[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+input#menu-toggle:not(:checked), input#menu-toggle:checked {
   display: none;
+}
+td input[type="checkbox"]{
+  cursor: pointer;
 }
