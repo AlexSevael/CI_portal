@@ -33,6 +33,19 @@ td input {
 .add_new {
     padding: 2px 6px !important;
 }
+.headers p{
+    float: right;
+    font-size: 2pc;
+    position: absolute;
+    cursor: pointer;
+    right: 36px;
+    top: -15px;
+    height: 0;
+}
+.headers{
+    padding: 0 20px !important;
+}
+
     </style>
 </head>
 
@@ -64,8 +77,8 @@ td input {
                     </div>
                     <section class="container-fluid bg_card mt-4 mb-4">
                         <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="headers ps-2">KEM General Details</h1>
+                            <div class="col-md-12" style="position: relative;">
+                                <h1 class="headers ps-2">KEM General Details <p onclick="homepage()">&#8592;</p></h1>
                             </div>
                         </div>
                         <div class="row">
@@ -155,6 +168,10 @@ td input {
                                                 <table class="table mt-3 user_master">
                                                     <thead style="background: #043b54;color: #fff;">
                                                         <tr>
+                                                            <th style="border: 1px solid #fff !important;" colspan="8" class="text-center">Add Part</th>
+                                                            <th style="border: 1px solid #fff !important;" colspan="6" class="text-center">Delete Part</th>
+                                                        </tr>
+                                                        <tr>
                                                             <th scope="col">S.No</th>
                                                             <th scope="col"></th>
                                                             <th scope="col" style="width: 10%;">Part No</th>
@@ -163,7 +180,7 @@ td input {
                                                             <th scope="col">Quantity</th>
                                                             <th scope="col">Unit</th>
                                                             <th scope="col">Type</th>
-                                                            <th scope="col" style="width: 10%;">Part No</th>
+                                                            <th scope="col" style="width: 10%;border-left: 1px solid #fff;">Part No</th>
                                                             <th scope="col" style="width: 10%;">Part Name</th>
                                                             <th scope="col">ZGS</th>
                                                             <th scope="col">Quantity</th>
@@ -182,7 +199,7 @@ td input {
                                                             <td><input type="text" class="form-control input_fields"></td>
                                                             <td><input type="text" class="form-control input_fields"></td>
                                                             <!-- delete part -->
-                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td style="border-left: 1px solid #fff;"><input type="text" class="form-control input_fields"></td>
                                                             <td><input type="text" class="form-control input_fields"></td>
                                                             <td><input type="text" class="form-control input_fields"></td>
                                                             <td><input type="text" class="form-control input_fields"></td>
