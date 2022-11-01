@@ -116,6 +116,7 @@ button.submit_btn {
 }
 a.forgot_ {
     color: #fff;
+    float: left;
 }
 
 /* index page  */
