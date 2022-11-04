@@ -10,9 +10,6 @@ function user_master_page(){
 function partconsumptoin_page(){
    window.location = 'partconsumption.html';
 }
-function add_new(){
-   window.location = 'add_user_master.html';
-}
 function login() {
     window.location = 'kem_manager.html';
 }
