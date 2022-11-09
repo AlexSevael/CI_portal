@@ -372,3 +372,18 @@ input#menu-toggle:not(:checked), input#menu-toggle:checked {
 td input[type="checkbox"]{
   cursor: pointer;
 }
+
+/* kem_managerkemno */
+ul.chosen-choices {
+  height: 38px !important;
+  overflow-y: auto !important;
+  border-radius: unset !important;
+  box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px inset, rgb(0 0 0 / 30%) 0px 18px 36px -18px inset;
+  border: 1px solid #ced4da !important;
+}
+input.chosen-search-input.default {
+  width: 72px !important;
+  height: 34px !important;
+  color: #21252991!important;
+  font-size: 16px !important;
+}

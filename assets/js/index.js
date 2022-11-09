@@ -25,3 +25,6 @@ function kem_myworklist(){
 function save_close(){
    window.location = '#';
 }
+$(".chosen-select").chosen({
+   no_results_text: "Oops, nothing found!"
+ })
