@@ -1,9 +1,6 @@
 function logout() {
     window.location = 'login.html';
 }
-function homepage(){
-   window.location = 'kem_manager.html';
-}
 function user_master_page(){
    window.location = 'user_master.html';
 }
@@ -11,13 +8,19 @@ function partconsumptoin_page(){
    window.location = 'partconsumption.html';
 }
 function login() {
-    window.location = 'kem_manager.html';
+    window.location = 'kem_landing.html';
 }
-function kem_mange() {
+function kem_entry() {
    window.location = 'kem_entry.html';
 }
 function back_add_user(){
    user_master_page()
+}
+function kem_landing(){
+   window.location = 'kem_landing.html';
+}
+function kem_myworklist(){
+   window.location = 'kem_myworklist.html';
 }
 function save_close(){
    window.location = '#';
