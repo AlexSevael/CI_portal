@@ -389,13 +389,13 @@ input.chosen-search-input.default {
 }
 
 .accordion-button:not(.collapsed)::after {
-  background-image: url("../../assets/images/up_arrow.png") !important;
+  background-image: url("../../assets/images/down_arrow.png") !important;
 }
 
 .accordion-button::after {
   width: var(--bs-accordion-btn-icon-width);
   height: var(--bs-accordion-btn-icon-width);
-  background-image: url("../../assets/images/up_arrow.png") !important;
+  background-image: url("../../assets/images/down_arrow.png") !important;
 }
 button.accordion-button {
   background: #2a5a6d !important;
