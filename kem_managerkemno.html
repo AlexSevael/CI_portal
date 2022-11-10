@@ -14,6 +14,9 @@
         </script>
     <!-- font family -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- script -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
     <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/>
@@ -47,6 +50,9 @@ td input {
 .headers{
     padding: 0 20px !important;
 }
+#parts td,#parts th{
+    font-size: 10px;
+}
 
     </style>
 </head>
@@ -58,7 +64,7 @@ td input {
                 <label id="trigger" for="menu-toggle"></label>
                 <label id="burger" for="menu-toggle"></label>
                 <ul id="menu">
-                    <li><a class="itel_list" href="kem_manager.html">KEM</a></li>
+                    <li><a class="itel_list" href="kem_managerlist.html">KEM</a></li>
                     <li><a class="itel_list" href="user_master.html">Masters</a></li>
                     <!-- <li><a class="itel_list" href="partconsumption.html">Part Consumption</a></li> -->
                 </ul>
@@ -174,7 +180,6 @@ td input {
                                                         </tr>
                                                         <tr>
                                                             <th scope="col">S.No</th>
-                                                            <th scope="col"></th>
                                                             <th scope="col" style="width: 10%;">Part No</th>
                                                             <th scope="col" style="width: 10%;">Part Name</th>
                                                             <th scope="col">ZGS</th>
@@ -192,7 +197,6 @@ td input {
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">1</th>
-                                                            <td><input type="checkbox"></td>
                                                             <td><input type="text" class="form-control input_fields"></td>
                                                             <td><input type="text" class="form-control input_fields"></td>
                                                             <td><input type="text" class="form-control input_fields"></td>
@@ -221,7 +225,11 @@ td input {
                                                   </h2>
                                                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                      <div class="row">
+                                                        <div class="col-md-12">
+                                                            <table class="table"></table>
+                                                        </div>
+                                                      </div>
                                                     </div>
                                                   </div>
                                                 </div>
@@ -233,7 +241,58 @@ td input {
                                                   </h2>
                                                   <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
-                                                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <table class="table mt-3 user_master" id="parts">
+                                                                    <thead style="background: #043b54;color: #fff;">
+                                                                        <tr>
+                                                                            <th scope="col">Function / <br> Action</th>
+                                                                            <th scope="col">R&D - Design <br> Release</th>
+                                                                            <th scope="col">Procurement - <br> Contracting</th>
+                                                                            <th scope="col">Procurement - <br> Tooling Ordered</th>
+                                                                            <th scope="col">Supplier Management - <br> Test Part Available</th>
+                                                                            <th scope="col">Supplier Management - <br> Tooling Finished</th>
+                                                                            <th scope="col">Supplier <br> Management - PPAP</th>
+                                                                            <th scope="col">ME Readiness</th>
+                                                                            <th scope="col">Fitment Trial</th>
+                                                                            <th scope="col">MHE (Packaging) - <br> Production Readiness</th>
+                                                                            <th scope="col">MHE - PR - <br> Production Readiness</th>
+                                                                            <th scope="col" style="width: 7%;">SOP</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <th scope="col">Targer</th>
+                                                                            <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th scope="col">Actual</th>
+                                                                            <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                          </div>
                                                     </div>
                                                   </div>
                                                 </div>
