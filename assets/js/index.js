@@ -22,6 +22,9 @@ function kem_landing(){
 function kem_myworklist(){
    window.location = 'kem_myworklist.html';
 }
+function kem_managerlist(){
+   window.location = 'kem_managerlist.html';
+}
 function save_close(){
    window.location = '#';
 }
