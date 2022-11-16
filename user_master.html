@@ -76,8 +76,8 @@
                                                   </div>
                                             </div>
                                             <div class="col-md-3 text-end p-0">
-                                                <a href="#popup" class="add_new">+ Add New</a>
-                                                <button class="add_new" style="padding: 5px 9px;">Bulk Upload</button>
+                                                <a href="#create_new" class="add_new">+ Add New</a>
+                                                <a href="#bulk_update" class="add_new">Bulk Update</a>
                                             </div>
                                         </div>
                                         <div class="row mt-1">
@@ -241,8 +241,8 @@
                     </section>
                 </div>
                 
-                    <!--popup-->
-                <div id="popup" class="popup-container">
+                    <!--Create New-->
+                <div id="create_new" class="popup-container">
                     <div class="popup-content">
                       <!-- <a href="#" class="close">&times;</a> -->
                      <div class="container-fluid">
@@ -337,6 +337,47 @@
                                     <option value="null">--Select--</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-12 text-end">
+                                <button class="popup_close" onclick="save_close()">Cancel</button>
+                                <button class="popup_save" onclick="save_close()">Save</button>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                  </div>
+
+                  <!--Bulk Update-->
+                  <div id="bulk_update" class="popup-container">
+                    <div class="popup-content" style="right: 33%;left: 36%;">
+                      <!-- <a href="#" class="close">&times;</a> -->
+                     <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Bulk Update</h3>
+                            </div>
+                        </div>
+                         <div class="row mt-1">
+                            <div class="col-md-12">
+                                <label for="level" class="form-label">Select Functino</label>
+                                <select class="form-control input_fields" id="level">
+                                    <option value="null">--Select--</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <label for="subFunction" class="form-label">Select Reporting to L4</label>
+                                <select class="form-control input_fields" id="subFunction">
+                                    <option value="null">--Select--</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <label for="reportingTo" class="form-label">Reporting To</label>
+                                <select class="form-control input_fields" id="reportingTo">
+                                    <option value="null">--Select--</option>
+                                </select>
+                            </div>
+                           
                         </div>
                         <div class="row mt-4">
                             <div class="col-md-12 text-end">
