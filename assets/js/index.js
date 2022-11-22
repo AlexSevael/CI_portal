@@ -8,7 +8,7 @@ function partconsumptoin_page(){
    window.location = 'partconsumption.html';
 }
 function login() {
-    window.location = 'kem_landing.html';
+    window.location = 'kem_myworklist.html';
 }
 function kem_entry() {
    window.location = 'kem_entry.html';
