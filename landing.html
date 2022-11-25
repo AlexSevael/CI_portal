@@ -25,6 +25,21 @@
             margin: 1px;
         }
 
+        div#title h1 {
+            font-size: 14px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        div#title p {
+            font-size: 15px;
+            margin: 0;
+            box-shadow: rgb(50 50 93 / 25%) 0px 13px 27px -5px, rgb(0 0 0 / 30%) 0px 8px 16px -8px;
+            margin-left: 11px;
+            background: #06161e;
+            margin-top: 1px;
+        }
+
         #table tr:hover {
             background-color: unset !important;
             color: #000;
@@ -33,19 +48,23 @@
         table#table td,
         table#table th {
             padding: 2px;
-            height: 28px;
+            height: 23px;
+            color: #fff;
         }
 
-        table#table h2 {
-            font-size: 15px;
+        table#table {
             margin: 0;
         }
+
         table#table th:first-child {
             width: 19%;
         }
-        table#table {
-    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-}
+
+        .score_card {
+            box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+            background: #043b54;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -74,107 +93,129 @@
         <div class="row mt-2">
             <div class="col-md-6"></div>
             <div class="col-md-6">
-                <div class="col-md-12">
-                    <table class="table" id="table">
-                        <tbody>
-                            <tr>
-                                <th>KEM</th>
-                                <th>Total</th>
-                                <th>Open</th>
-                                <th>Close</th>
-                            </tr>
-                            <tr>
-                                <td rowspan="2">
-                                    <h2>07-2022</h2>
-                                    <h2>07-2022</h2>
-                                </td>
-                                <td>211</td>
-                                <td>63</td>
-                                <td>148</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-12 score_card pb-2">
+                    <div class="row">
+                        <div class="col-md-3 text-center pt-1 pb-1" id="title">
+                            <h1>KEM</h1>
+                            <p class="mt-1">07-2022</p>
+                            <p>07-2022</p>
+                        </div>
+                        <div class="col-md-9">
+                            <table class="table" id="table">
+                                <tbody>
+                                    <tr>
+                                        <th>Total</th>
+                                        <th>Open</th>
+                                        <th>Closed</th>
+                                        <th style="width: 39%;" rowspan="2"></th>
+                                    </tr>
+                                    <tr>
+                                        <td class="pt-2">211</td>
+                                        <td class="pt-2">63</td>
+                                        <td class="pt-2">148</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <table class="table" id="table">
-                        <tbody>
-                            <tr>
-                                <th>OPEN CASES</th>
-                                <th>TBA</th>
-                                <th>TBA</th>
-                                <th>TBP</th>
-                                <th>R&D</th>
-                                <th>Proc</th>
-                                <th>SM</th>
-                                <th>Others</th>
-                            </tr>
-                            <tr>
-                                <td>Currently</td>
-                                <td>0</td>
-                                <td>12</td>
-                                <td>23</td>
-                                <td>63</td>
-                                <td>272</td>
-                                <td>296</td>
-                                <td>345</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-12 score_card mt-3 pt-2 pb-2">
+                    <div class="row">
+                        <div class="col-md-3 text-center" id="title">
+                            <h1>OPEN CASES</h1>
+                            <p class="mt-1">Currently</p>
+                        </div>
+                        <div class="col-md-9">
+                            <table class="table" id="table">
+                                <tbody>
+                                    <tr>
+                                        <th>TBA</th>
+                                        <th>TBA</th>
+                                        <th>TBP</th>
+                                        <th>R&D</th>
+                                        <th>Proc</th>
+                                        <th>SM</th>
+                                        <th>Others</th>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>12</td>
+                                        <td>23</td>
+                                        <td>63</td>
+                                        <td>272</td>
+                                        <td>296</td>
+                                        <td>345</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <table class="table" id="table">
-                        <tbody>
-                            <tr>
-                                <th>Events</th>
-                                <th>Fitment</th>
-                                <th>Implementation</th>
-                            </tr>
-                            <tr>
-                                <td>27-Jul-2022</td>
-                                <td>Plan 0</td>
-                                <td>Actual 0</td>
-                            </tr>
-                            <tr>
-                                <td>27-Jul-2022</td>
-                                <td>Plan 1</td>
-                                <td>Actual 0</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-12 score_card mt-3 pb-2">
+                    <div class="row">
+                        <div class="col-md-3 text-center pt-1 pb-1" id="title">
+                            <h1>Events</h1>
+                            <p class="mt-1">27-Jul-2022</p>
+                            <p>27-Jul-2022</p>
+                        </div>
+                        <div class="col-md-9">
+                            <table class="table" id="table">
+                                <tbody>
+                                    <tr>
+                                        <th>Fitment</th>
+                                        <th>Implementation</th>
+                                        <th style="width: 39%;" rowspan="3"></th>
+                                    </tr>
+                                    <tr>
+                                        <td>Plan 0</td>
+                                        <td>Actual 0</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plan 0</td>
+                                        <td>Actual 1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <table class="table" id="table">
-                        <tbody>
-                            <tr>
-                                <th>OPEN POINT</th>
-                                <th>Total</th>
-                                <th>LCIM</th>
-                                <th>Others</th>
-                            </tr>
-                            <tr>
-                                <td>2022</td>
-                                <td>226</td>
-                                <td>69</td>
-                                <td>157</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-12 score_card mt-3 pt-2 pb-2">
+                    <div class="row">
+                        <div class="col-md-3 text-center pt-1 pb-1" id="title">
+                            <h1>KEM</h1>
+                            <p class="mt-1">07-2022</p>
+                        </div>
+                        <div class="col-md-9">
+                            <table class="table" id="table">
+                                <tbody>
+                                    <tr>
+                                        <th>Total</th>
+                                        <th>LCIM</th>
+                                        <th>Others</th>
+                                        <th style="width: 39%;" rowspan="2"></th>
+                                    </tr>
+                                    <tr>
+                                        <td>211</td>
+                                        <td>63</td>
+                                        <td>148</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <table class="table" id="table">
-                        <tbody>
-                            <tr>
-                                <th>OBSOLESCENCE</th>
-                                <th style="width: 69%;" rowspan="3">Chart</th>
-                            </tr>
-                            <tr>
-                                <td>2022: Ok</td>
-                            </tr>
-                            <tr>
-                                <td>ok</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-12 score_card mt-3 pt-1 pb-2">
+                    <div class="row">
+                        <div class="col-md-3 text-center pt-1 pb-1" id="title">
+                            <h1>OBSOLESCENCE</h1>
+                            <p class="mt-1">2022: Ok</p>
+                            <p>Ok</p>
+                        </div>
+                        <div class="col-md-9 text-center">
+                            <h5 class="pt-4">Chart</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
 
