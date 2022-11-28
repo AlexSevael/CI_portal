@@ -61,7 +61,7 @@
                             <div class="row mt-2">
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4 text-center">
-                                    <img src="assets/images/logo.png" class="logo" alt="" onclick="kem_landing()">
+                                    <img src="assets/images/logo.png" class="logo" alt="" onclick="landing()">
                                 </div>
                                 <div class="col-md-4 text-end pt-1">
                                     <img src="assets/images/logout.png" title="Logout" class="logout" alt=""
@@ -93,8 +93,8 @@
                                             <button class="add_new">Print</button>
                                         </div>
                                         <div class="col-md-4 p-0 text-end">
-                                            <button class="add_new">Re-Open</button>
-                                            <button class="add_new">Re-Asign</button>
+                                            <button class="add_new" data-bs-toggle="modal" data-bs-target="#confirm_modal">Re-Open</button>
+                                            <button class="add_new" data-bs-toggle="modal" data-bs-target="#alert_modal">Re-Asign</button>
                                             <button class="add_new">Direct-Close</button>
                                         </div>
                                     </div>
@@ -268,6 +268,42 @@
                     </div>
                     </section>
               
+     <!--Confirm popup -->
+     <div class="modal fade" id="confirm_modal" tabindex="-1" aria-labelledby="confirm_modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header" style="padding: 0 7px;">
+              <h5 class="modal-title" id="confirm_modalLabel">Confirm</h5>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body text-center">
+                <h2 style="font-size: 14px;">Your msg</h2>
+            </div>
+            <div class="modal-footer" style="padding: 0 7px;">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size: 12px;padding: 1px 7px;">No</button>
+              <button type="button" class="add_new" style="padding:1px 7px;">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+           <!--Alert popup -->
+     <div class="modal fade" id="alert_modal" tabindex="-1" aria-labelledby="alert_modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header" style="padding: 0 7px;">
+              <h5 class="modal-title" id="alert_modalLabel">Alert</h5>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body text-center">
+                <h2 style="font-size: 14px;">Your msg</h2>
+            </div>
+            <div class="modal-footer" style="padding: 0 7px;">
+              <button type="button" class="add_new" data-bs-dismiss="modal" style="padding:1px 7px;">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="assets/js/index.js">
 
     </script>
