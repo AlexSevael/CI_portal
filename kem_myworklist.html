@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="assets/css/popup.css">
     <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="assets/bootstrap/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    <script src="assets/bootstrap/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
         </script>
     <!-- font family -->
     <link href="assets/bootstrap/font-family.css" rel="stylesheet">
@@ -34,14 +34,55 @@
             transition: all .3s;
             font-weight: 700;
         }
+
+        /* spinner start*/
+        .spin {
+            width: 120px;
+            height: 120px;
+            border: 5px solid;
+            margin: 200px auto;
+            border-radius: 50%;
+            border-color: #687b87 transparent;
+            animation: spin 1s linear infinite;
+
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #043b5454;
+            left: 0;
+            display: none !important;
+            z-index: 9999 !important;
+        }
+
+        .spinner_show {
+            display: initial !important;
+        }
+        /* spinner end */
     </style>
 </head>
 
 <body style="background-color: #f5f6f1;">
+
+    <!-- spinner start -->
+    <div class="spinner">
+        <div class="spin"></div>
+    </div>
+    <!-- spinner end  -->
+
     <!-- sidebar start -->
     <div class="container-fluid bg_color">
         <div class="row">
             <div class="col-md-12 p-0">
+                
                 <input type="checkbox" id="menu-toggle" />
                 <label id="trigger" for="menu-toggle"></label>
                 <label id="burger" for="menu-toggle"></label>
@@ -55,273 +96,282 @@
     <!-- sidebar end -->
 
     <!-- navbar start -->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12 bg_image">
-                            <div class="row mt-2">
-                                <div class="col-md-4"></div>
-                                <div class="col-md-4 text-center">
-                                    <img src="assets/images/logo.png" class="logo" alt="" onclick="landing()">
-                                </div>
-                                <div class="col-md-4 text-end pt-1">
-                                    <img src="assets/images/logout.png" title="Logout" class="logout" alt=""
-                                        onclick="logout()">
-                                </div>
-                            </div>
-                        </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 bg_image">
+                <div class="row mt-2">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center">
+                        <img src="assets/images/logo.png" class="logo" alt="" onclick="landing()">
+                    </div>
+                    <div class="col-md-4 text-end pt-1">
+                        <img src="assets/images/logout.png" title="Logout" class="logout" alt="" onclick="logout()">
                     </div>
                 </div>
-                 <!-- navbar end -->
+            </div>
+        </div>
+    </div>
+    <!-- navbar end -->
 
-                    <section style="margin: 14px;">
-                        <div class="container-fluid bg_card mt-4 mb-4">
+    <section style="margin: 14px;">
+        <div class="container-fluid bg_card mt-4 mb-4">
 
-                        
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1 class="headers ps-2">KEM My Worklist</h1>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="headers ps-2">KEM My Worklist</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="background-color: #f5f6f1;">
+                    <section class="table_bg" style="margin: 14px 21px 14px 21px;">
+                        <div class="row mt-2">
+                            <div class="col-md-8 p-0">
+                                <button class="add_new">CSV</button>
+                                <button class="add_new">Excel</button>
+                                <button class="add_new" onclick="remove_spinner()">PDF</button>
+                                <button class="add_new" onclick="add_spinner()">Print</button>
+                            </div>
+                            <div class="col-md-4 p-0 text-end">
+                                <button class="add_new" data-bs-toggle="modal"
+                                    data-bs-target="#confirm_modal">Re-Open</button>
+                                <button class="add_new" data-bs-toggle="modal"
+                                    data-bs-target="#alert_modal">Re-Assign</button>
+                                <button class="add_new">Direct-Close</button>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12" style="background-color: #f5f6f1;">
-                                <section class="table_bg" style="margin: 14px 21px 14px 21px;">
-                                    <div class="row mt-2">
-                                        <div class="col-md-8 p-0">
-                                            <button class="add_new">CSV</button>
-                                            <button class="add_new">Excel</button>
-                                            <button class="add_new">PDF</button>
-                                            <button class="add_new">Print</button>
-                                        </div>
-                                        <div class="col-md-4 p-0 text-end">
-                                            <button class="add_new" data-bs-toggle="modal" data-bs-target="#confirm_modal">Re-Open</button>
-                                            <button class="add_new" data-bs-toggle="modal" data-bs-target="#alert_modal">Re-Assign</button>
-                                            <button class="add_new">Direct-Close</button>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3 mb-2">
-                                        <div class="col-md-2 ps-0">
-                                            Show
-                                            <select style="font-size: 13px;border-radius: 4px;
+                        <div class="row mt-3 mb-2">
+                            <div class="col-md-2 ps-0">
+                                Show
+                                <select style="font-size: 13px;border-radius: 4px;
                                             border: 1px solid #ced4da;">
-                                                <option value="">10</option>
-                                                <option value="">20</option>
-                                                <option value="">30</option>
-                                            </select>&nbsp; entries
-                                        </div>
-                                        <div class="col-md-8"></div>
-                                        <div class="col-md-2 pe-0">
-                                            <input type="search" class="form-control" placeholder="Search..." style="height: 23px;
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                </select>&nbsp; entries
+                            </div>
+                            <div class="col-md-8"></div>
+                            <div class="col-md-2 pe-0">
+                                <input type="search" class="form-control" placeholder="Search..." style="height: 23px;
                                             font-size: 14px;">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-1">
-                                        <div class="col-md-12"
-                                            style="background-color: #fff;border-radius: 6px;overflow-y: auto;">
-                                            <table class="table mt-3 user_master">
-                                                <thead style="background: #043b54;color: #fff;">
-                                                    <tr>
-                                                        <th scope="col"></th>
-                                                        <th scope="col">S.No</th>
-                                                        <th scope="col">Project</th>
-                                                        <th scope="col">Release Date</th>
-                                                        <th scope="col">Received Date</th>
-                                                        <th scope="col">KEM No</th>
-                                                        <th scope="col">Co-KEM</th>
-                                                        <th scope="col">CR No</th>
-                                                        <th scope="col">Description</th>
-                                                        <th scope="col">Status</th>
-                                                        <th scope="col">R&D</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">1</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">2</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">3</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">4</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">5</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">6</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">7</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">8</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">9</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <th scope="row">10</th>
-                                                        <td>HDT</td>
-                                                        <td>31/12/18</td>
-                                                        <td>18/07/22</td>
-                                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
-                                                        <td><button class="add_new">View</button></td>
-                                                        <td>I210270001</td>
-                                                        <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
-                                                        <td><button class="add_new" style="white-space: nowrap;">R&D
-                                                                Clarification</button></td>
-                                                        <td><input type="checkbox"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </section>
                             </div>
                         </div>
-                    </div>
+                        <div class="row mt-1">
+                            <div class="col-md-12" style="background-color: #fff;border-radius: 6px;overflow-y: auto;">
+                                <table class="table mt-3 user_master">
+                                    <thead style="background: #043b54;color: #fff;">
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">S.No</th>
+                                            <th scope="col">Project</th>
+                                            <th scope="col">Release Date</th>
+                                            <th scope="col">Received Date</th>
+                                            <th scope="col">KEM No</th>
+                                            <th scope="col">Co-KEM</th>
+                                            <th scope="col">CR No</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">R&D</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">1</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">2</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">3</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">4</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">5</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">6</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">7</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">8</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">9</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <th scope="row">10</th>
+                                            <td>HDT</td>
+                                            <td>31/12/18</td>
+                                            <td>18/07/22</td>
+                                            <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                            <td><button class="add_new">View</button></td>
+                                            <td>I210270001</td>
+                                            <td>HDT REFLECTIVE TAPE CODE CORRECTION</td>
+                                            <td><button class="add_new" style="white-space: nowrap;">R&D
+                                                    Clarification</button></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </section>
-              
-     <!--Confirm popup -->
-     <div class="modal fade" id="confirm_modal" tabindex="-1" aria-labelledby="confirm_modalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header" style="padding: 0 7px;">
-              <h5 class="modal-title" id="confirm_modalLabel">Confirm</h5>
-              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
             </div>
-            <div class="modal-body text-center">
-                <h2 style="font-size: 14px;">Your msg</h2>
-            </div>
-            <div class="modal-footer" style="padding: 0 7px;">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size: 12px;padding: 1px 7px;">No</button>
-              <button type="button" class="add_new" style="padding:1px 7px;">Yes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-           <!--Alert popup -->
-     <div class="modal fade" id="alert_modal" tabindex="-1" aria-labelledby="alert_modalLabel" aria-hidden="true">
+    <!--Confirm popup -->
+    <div class="modal fade" id="confirm_modal" tabindex="-1" aria-labelledby="confirm_modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header" style="padding: 0 7px;">
-              <h5 class="modal-title" id="alert_modalLabel">Alert</h5>
-              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            <div class="modal-content">
+                <div class="modal-header" style="padding: 0 7px;">
+                    <h5 class="modal-title" id="confirm_modalLabel">Confirm</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body text-center">
+                    <h2 style="font-size: 14px;">Your msg</h2>
+                </div>
+                <div class="modal-footer" style="padding: 0 7px;">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        style="font-size: 12px;padding: 1px 7px;">No</button>
+                    <button type="button" class="add_new" style="padding:1px 7px;">Yes</button>
+                </div>
             </div>
-            <div class="modal-body text-center">
-                <h2 style="font-size: 14px;">Your msg</h2>
-            </div>
-            <div class="modal-footer" style="padding: 0 7px;">
-              <button type="button" class="add_new" data-bs-dismiss="modal" style="padding:1px 7px;">OK</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
+
+    <!--Alert popup -->
+    <div class="modal fade" id="alert_modal" tabindex="-1" aria-labelledby="alert_modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header" style="padding: 0 7px;">
+                    <h5 class="modal-title" id="alert_modalLabel">Alert</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body text-center">
+                    <h2 style="font-size: 14px;">Your msg</h2>
+                </div>
+                <div class="modal-footer" style="padding: 0 7px;">
+                    <button type="button" class="add_new" data-bs-dismiss="modal" style="padding:1px 7px;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/index.js">
 
+    </script>
+    <script>
+       function add_spinner(){
+            $(".spinner").addClass("spinner_show")
+        }
+        function remove_spinner(){
+            $(".spinner").removeClass("spinner_show")
+        }
     </script>
 </body>
 
