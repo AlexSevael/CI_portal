@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kem-closed</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/popup.css">
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font family -->
+    <link href="assets/bootstrap/font-family.css" rel="stylesheet">
+</head>
+<style>
+    .add_new{
+        color:#fff !important;
+        transition: all .3s;
+    }
+    tr:hover .add_new{
+       background-color:#fff !important;
+       color: #000 !important;
+    }
+    tr:hover a.ken_no{
+      color: #fff !important;
+    }
+    a.ken_no{
+        color: #043b54;
+        transition: all .3s;
+        font-weight: 700;
+    }
+    /* checkbox */
+    #checkbox{
+        margin-left: 2px;
+    }
+    /* Table Head Search Boxs */
+    #search{
+        width: 100px;
+        height: 21px;
+        padding: 5px;
+        margin-top: 3px;
+    }
+    #search::placeholder{
+        text-align: center;
+    }
+    /* Table Head Timer */
+    #time{
+        font-size: 20px;
+    }
+    /* Download Button */
+    .download{
+        color:#fff !important;
+        transition: all .3s;
+        border: none;
+        background: #043b54;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 12px;
+        padding: 3px 4px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .download:hover{
+        color: #fff !important;
+        transform: scale(1);
+    }
+    /* Planner > Closed Kem */
+    #planner{
+        color: #043b54;
+        text-decoration: none;
+    }
+    #closed_kem{
+        float: right;
+        margin-right: 20px;
+        font-size: 10px;
+
+    }
+</style>
+<body>
+    <body style="background-color: #f5f6f1;">
+        <!-- sidebar start -->
+        <div class="container-fluid bg_color">
+            <div class="row">
+                <div class="col-md-12 p-0">
+                    <input type="checkbox" id="menu-toggle" />
+                    <label id="trigger" for="menu-toggle"></label>
+                    <label id="burger" for="menu-toggle"></label>
+                    <ul id="menu">
+                        <li><a class="itel_list" href="kem_managerlist.html">KEM</a></li>
+                        <li><a class="itel_list" href="user_master.html">Masters</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar end -->
+
+    <!-- navbar start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 bg_image">
+                <div class="row mt-2">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center">
+                        <img src="assets/images/logo.png" class="logo" alt="" onclick="landing()">
+                    </div>
+                    <div class="col-md-4 text-end pt-1">
+                        <img src="assets/images/logout.png" title="Logout" class="logout" alt=""
+                            onclick="logout()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- navbar end -->
+
+    <!-- Start -->
+     <div> <span id="closed_kem"><a id="planner" href="#">Planner &nbsp; &gt; </a> &nbsp;Closed KEM Tracker</span></div>
+     <!-- Table Section -->
+     <section style="margin: 14px;">
+        <div class="container-fluid bg_card mt-4 mb-4">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="headers ps-2">Closed KEM Tracker</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="background-color: #f5f6f1;">
+                <section class="table_bg" style="margin: 14px 21px 14px 21px;">
+                    <div class="row mt-2">
+                        <div class="col-md-8 p-0">
+                            <div>
+                            <input type="checkbox" id="checkbox">
+                            <span>0-30 Days</span>
+                            <input type="checkbox" id="checkbox">
+                            <span>31-60 Days</span>
+                            <input type="checkbox" id="checkbox">
+                            <span>More than 60 Days</span>
+                        </div>
+                            <button class="add_new">Excel</button>
+                        </div>
+                        <!-- <div class="col-md-2 p-0 text-end"> -->
+                            <div class="col-md-2 ps-0" style="display:inline ;">
+                                <label>From:</label>
+                                <input type="search" class="form-control" style="padding: 0 4px !important;height: 30px;">
+                            </div>
+                            <div class="col-md-2 pe-0" style="display:inline ;">
+                                <label>To:</label>
+                                <input type="search" class="form-control" style="padding: 0 4px !important;height: 30px;">
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-md-12"
+                            style="background-color: #fff;border-radius: 6px;overflow-y: auto;">
+                            <table class="table mt-3 user_master">
+                                <thead style="background: #043b54;color: #fff;">
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">S.No</th>
+                                        <th scope="col">Project 
+                                            <div><input type="search" id="search" placeholder="Search Project" class="form-control"></div></th>
+                                        <th scope="col">Release Date 
+                                            <div><input type="search" id="search" placeholder="Search Release Date" class="form-control"></div></th>
+                                        <th scope="col">Received Date 
+                                            <div><input type="search" id="search" placeholder="Search Received" class="form-control"></div></th>
+                                        <th scope="col">Date of Input 
+                                            <div><input type="search" id="search" placeholder="Search Date Of Input" class="form-control"></div></th>
+                                        <th scope="col">LCIM Classification 
+                                            <div><input type="search" id="search" placeholder="Search LCIM Classification" class="form-control"></div></th>
+                                        <th scope="col">KEM No 
+                                            <div><input type="search" id="search" placeholder="Search KEM No" class="form-control"></div></th>
+                                        <th scope="col">CoKEM</th>
+                                        <th scope="col">CR No 
+                                            <div><input type="search" id="search" placeholder="Search CR No" class="form-control"></div></th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">KEM Remarks</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">CI Contact</th>
+                                        <th scope="col">Pending Status 
+                                            <div><input type="search" id="search" placeholder="Search Pending Status" class="form-control"></div></th>
+                                        <th scope="col">Stage 
+                                            <div><input type="search" id="search" placeholder="Search Stage" class="form-control"></div></th>
+                                        <th scope="col">Plan Date 
+                                            <div><input type="search" id="search" placeholder="Search Plan Date" class="form-control"></div></th>
+                                        <th scope="col">Close Date 
+                                            <div><input type="search" id="search" placeholder="Search Closed Date" class="form-control"></div></th>
+                                        <th scope="col" style="padding: 12px;">PDF</th>
+                                        <th scope="col"><i id="time" class="fa-regular fa-clock"></i></th>
+                                        <th scope="col" style="padding: 12px;">PPT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">1</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">2</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">I</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">I</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">3</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">I</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">I</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">4</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button>
+                                            <button class="download">I</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button> 
+                                           <button class="download">I</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">5</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">6</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">7</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">8</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button> 
+                                            <button class="download">I</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button> 
+                                            <button class="download">I</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">9</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <th scope="row">10</th>
+                                        <td>HDT</td>
+                                        <td>31/12/18</td>
+                                        <td>18/07/22</td>
+                                        <td>30/01/19</td>
+                                        <td> </td>
+                                        <td><a class="ken_no" href="kem_entry.html">ZAP0083918</a></td>
+                                        <td><button class="add_new">View</button></td>
+                                        <td>I171108601</td>
+                                        <td>Series Management</td>
+                                        <td>Bracket...</td>
+                                        <td> BRACKET SURFACE</td>
+                                        <td> </td>
+                                        <td> </td>
+                                        <td>Closed</td>
+                                        <td>11/12/19</td>
+                                        <td>11/12/19</td>
+                                        <td><button class="download">F</button></td>
+                                        <td>1106</td>
+                                        <td><button class="download">F</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- End -->
+</body>
+</html>
