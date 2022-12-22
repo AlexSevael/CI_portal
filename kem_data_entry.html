@@ -1,0 +1,1072 @@
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/popup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- script -->
+    <link href="assets/bootstrap/swap.css" rel="stylesheet">
+       <script src="assets/bootstrap/jquery.min.js"></script>
+       <script src="assets/bootstrap/chosen.jquery.min.js"></script>
+       <link href="assets/bootstrap/chosen.min.css" rel="stylesheet"/>
+    <style>
+        .popup-content{
+            left: 1%;
+            right: 1%;
+        }
+        td {
+    padding: 0 4!important;
+}
+td input.form-control.input_fields {
+    padding: 0 2px;
+}
+td input {
+    font-size: 14px !important;
+    text-align: center;
+}
+.add_new {
+    padding: 2px 6px !important;
+}
+.headers p{
+    float: right;
+    font-size: 2pc;
+    position: absolute;
+    cursor: pointer;
+    right: 36px;
+    top: -15px;
+    height: 0;
+}
+.headers{
+    padding: 0 20px !important;
+}
+#accordion_table th, #accordion_table td {
+    text-align: start !important;
+    border: 1px solid;
+}
+table#accordion_table {
+    border: 1px solid;
+}
+#parts th, #parts td {
+font-size: 10px !important;
+}
+/* th, td {
+    font-size: 11px !important;
+} */
+.accordion-body {
+    padding: 0 11px;
+}
+/* KEM Data Entry */
+#kem_data_entry{
+    margin-right: 10px;
+    float: right;
+    font-size: 10px;
+}
+#kem_entry_a{
+    color: #043b54;
+    text-decoration: none;
+}
+/* View Documents */
+.view_document{
+    margin-top: 1%;
+}
+#view_doc_a{
+    color: #0c5c81;
+    text-decoration: none;
+    font-size: 12px;
+}
+/* tab content */
+#tab-1:checked ~ .tab-content #tab-item-1  {
+	display: block;
+}
+#tab-1:checked ~ .line {
+	left: 2px;
+}
+#tab-1, #tab-1 + span {
+	left: 2px;
+}
+/* buttons */
+.submit,.bypass,.back,.upload{
+    border: none;
+    background: #043b54;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    padding: 9px 10px;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+.submit:hover,.back:hover,.bypass:hover,.upload:hover{
+  color: #fff !important;
+  transform: scale(1);
+}
+/* Modal */
+#head_content_left{
+    font-size: 15px;
+    margin-right: 40pxpx;
+
+}
+#head_content_right{
+    font-size: 15px;
+    margin-right: 85px;
+}
+/* .modal_body{
+    text-align: left;
+} */
+.col_red{
+    color: red;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 5px;
+}
+.col_blue{
+    color: #0c5c81;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 5px;
+}
+.modal_body .col-md-8{
+    text-align: left;
+}
+/* Tab */
+.accordion_head{
+    text-align: center;
+    margin-top: 1%;
+    height: 11%;
+    background-color: #0c5c81;
+    /* border: 1px solid black; */
+    color: #f5f6f1;
+}
+.accordion_body{
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.accordion-body{
+    padding-top: 5px;
+    padding-right: 16px;
+    padding-bottom: 68px;
+    padding-left: 16px;
+}
+#acc_head{
+    margin-top: 2%;
+}
+
+.nav-link.name1{
+    color: #043b54;
+}
+
+</style>
+</head>
+
+<body style="background-color: #f5f6f1;">
+    <div class="container-fluid bg_color">
+        <div class="row">
+              <input type="checkbox" id="menu-toggle"/>
+                <label id="trigger" for="menu-toggle"></label>
+                <label id="burger" for="menu-toggle"></label>
+                <ul id="menu">
+                    <li><a class="itel_list" href="kem_managerlist.html">KEM</a></li>
+                    <li><a class="itel_list" href="user_master.html">Masters</a></li>
+                    <!-- <li><a class="itel_list" href="partconsumption.html">Part Consumption</a></li> -->
+                </ul>
+            <div class="col-md-12 p-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <di v class="col-md-12 bg_image">
+                            <div class="row mt-2">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4 text-center">
+                                    <img src="assets/images/logo.png" class="logo" alt="" onclick="landing()">
+                                </div>
+                                <div class="col-md-4 text-end pt-1">
+                                    <img src="assets/images/logout.png" title="Logout" class="logout" alt="" onclick="logout()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start -->
+                    <div><span id="kem_data_entry"><a id="kem_entry_a" href="#">LCIM &nbsp; &gt;</a>&nbsp; KEM Data Entry</span></div>
+                    <section class="container-fluid bg_card mt-4 mb-4">
+                        <div class="row">
+                            <div class="col-md-12" style="position: relative;">
+                                <h1 class="headers ps-2">KEM General Details <p onclick="kem_managerlist()">&#8592;</p></h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" style="background-color: #f5f6f1;">
+                                    <section class="table_bg" style="margin: 14px 21px 14px 21px;">
+                                        <div class="row mt-3">
+                                            <div class="col-md-4">
+                                                <label for="kemNo" class="form-label">KEM No</label>
+                                                <input type="text" class="form-control input_fields" id="kemNo" placeholder="Enter...">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="crNo" class="form-label">CR No</label>
+                                                <input type="text" class="form-control input_fields" id="crNo" placeholder="Enter...">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="Project" class="form-label">Project</label>
+                                                <select class="form-control input_fields" id="Project">
+                                                    <option value="null">--Select--</option>
+                                                </select>
+                                            </div>
+                                            <!-- <div class="col-md-3">
+                                                <label for="mobileNo" class="form-label">Mobile No <span style="color: red;">*</span></label>
+                                                <input type="text" class="form-control input_fields" maxlength="10" id="mobileNo" placeholder="Enter...">
+                                            </div> -->
+                                           
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-md-4">
+                                                <label for="shop" class="form-label">Shop <span style="color: red;">*</span></label>
+                                                <select id="shop" data-placeholder="--Select--" multiple class="form-control chosen-select input_fields" name="shop">
+                                                    <option value=""></option>
+                                                    <option>one</option>
+                                                    <option>two</option>
+                                                  </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="coKem" class="form-label">Co KEM</label>
+                                                <input type="text" class="form-control input_fields" id="coKem" placeholder="Enter...">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="market" class="form-label">Market <span style="color: red;">*</span></label>
+                                                <select class="form-control input_fields" id="market">
+                                                    <option value="null">--Select--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                         <div class="row mt-4">
+                                            <div class="col-md-4">
+                                                <label for="category" class="form-label">Category <span style="color: red;">*</span></label>
+                                                <select class="form-control input_fields" id="category">
+                                                    <option value="null">--Select--</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="affected_model" class="form-label">Affected Model <span style="color: red;">*</span></label>
+                                                <select id="affected_model" data-placeholder="--Select--" multiple class="form-control chosen-select input_fields" name="affected_model">
+                                                    <option value=""></option>
+                                                    <option>one</option>
+                                                    <option>two</option>
+                                                  </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="description" class="form-label">Description</label>
+                                                <input type="text" class="form-control input_fields" id="description" placeholder="Enter...">
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-md-1">  </div>
+                                            <div class="col-md-10">
+                                                <label for="remark" class="form-label">Remarks</label>
+                                                <textarea rows="2" class="form-control input_fields" id="Remarks"></textarea>
+                                            </div>
+                                            <div class="col-md-1">  </div>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-md-5 p-0">
+                                            </div>
+                                            <div class="col-md-7 text-end p-0">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12"></div>
+                                        </div>
+                                        <!-- Add And Delete Part Start-->
+                                        <div class="row mt-1">
+                                            <div class="col-md-12" style="background-color: #fff;border-radius: 6px;overflow-y: auto;">
+                                                <table class="table mt-3 user_master">
+                                                    <thead style="background: #043b54;color: #fff;">
+                                                        <tr>
+                                                            <th style="border: 1px solid #fff !important;" colspan="7" class="text-center">Add Part</th>
+                                                            <th style="border: 1px solid #fff !important;" colspan="6" class="text-center">Delete Part</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col" style="width: 10%;">Part No</th>
+                                                            <th scope="col" style="width: 10%;">Part Name</th>
+                                                            <th scope="col">ZGS</th>
+                                                            <th scope="col">Quantity</th>
+                                                            <th scope="col">Unit</th>
+                                                            <th scope="col">Type</th>
+                                                            <th scope="col" style="width: 10%;border-left: 1px solid #fff;">Part No</th>
+                                                            <th scope="col" style="width: 10%;">Part Name</th>
+                                                            <th scope="col">ZGS</th>
+                                                            <th scope="col">Quantity</th>
+                                                            <th scope="col">Unit</th>
+                                                            <th scope="col">Type</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <!-- delete part -->
+                                                            <td style="border-left: 1px solid #fff;"><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                            <td><input type="text" class="form-control input_fields"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- Add And Delete Part End -->
+
+                                        <!-- View Documents -->
+                                        <div class="view_document">
+                                            <a id="view_doc_a" href="#">View Documents</a>
+                                        </div>
+                                        <div class="row my-2">
+                                            <div class="col-md-12 p-0">
+                                                <div class="tabs effect-3">
+                                                        <!-- tab-title -->
+                                                <ul class="nav nav-tabs d-none d-lg-flex" id="myTab" role="tablist">
+                                                       <li class="nav-item" role="presentation">
+                                                       <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">LCIM</button>
+                                                       </li>
+                                                       <li class="nav-item" role="presentation">
+                                                       <button class="nav-link name1" id="R&D-tab" data-bs-toggle="tab" data-bs-target="#R&D-tab-pane" type="button" role="tab" aria-controls="R&D-tab-pane" aria-selected="false">R&D</button>
+                                                       </li>
+                                                       <li class="nav-item" role="presentation">
+                                                       <button class="nav-link name1" id="proc-tab" data-bs-toggle="tab" data-bs-target="#proc-tab-pane" type="button" role="tab" aria-controls="proc-tab-pane" aria-selected="false">PROC</button>
+                                                       </li>
+                                                       <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="scmq-tab" data-bs-toggle="tab" data-bs-target="#scmq-tab-pane" type="button" role="tab" aria-controls="scmq-tab-pane" aria-selected="false">SCMQ</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="me-tab" data-bs-toggle="tab" data-bs-target="#me-tab-pane" type="button" role="tab" aria-controls="me-tab-pane" aria-selected="false">ME</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="mhe-tab" data-bs-toggle="tab" data-bs-target="#mhe-tab-pane" type="button" role="tab" aria-controls="mhe-tab-pane" aria-selected="false">MHE</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="ipl-tab" data-bs-toggle="tab" data-bs-target="#ipl-tab-pane" type="button" role="tab" aria-controls="ipl-tab-pane" aria-selected="false">IPL</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="pq-tab" data-bs-toggle="tab" data-bs-target="#pq-tab-pane" type="button" role="tab" aria-controls="pq-tab-pane" aria-selected="false">PQ</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="mrp-tab" data-bs-toggle="tab" data-bs-target="#mrp-tab-pane" type="button" role="tab" aria-controls="mrp-tab-pane" aria-selected="false">MRP</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="prod-tab" data-bs-toggle="tab" data-bs-target="#prod-tab-pane" type="button" role="tab" aria-controls="prod-tab-pane" aria-selected="false">PROD</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                        <button class="nav-link name1" id="lq-tab" data-bs-toggle="tab" data-bs-target="#lq-tab-pane" type="button" role="tab" aria-controls="lq-tab-pane" aria-selected="false">LQ</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                               <!-- Tab Content -->
+                                                <div class="tab-content accordion" id="myTabContent">
+                                                    <div class="tab-pane fade show active accordion-item" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                                  
+                                                      <h2 class="accordion-header d-lg-none" id="headingOne">
+                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Accordion Item #1</button>
+                                                      </h2>
+                                                      <div id="collapseOne" class="accordion-collapse collapse show  d-lg-block" aria-labelledby="headingOne" data-bs-parent="#myTabContent">
+                                                        <div class="accordion-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                    <div class="accordion_head">
+                                                                        <h5 id="acc_head">Planning</h5>
+                                                                    </div>
+                                                                    <div class="accordion_body">
+                                                                        <p>Remarks</p>
+                                                                        <p class="col_red">Empty</p>
+                                                                        <div>
+                                                                            <p>A0 Drawing No. *</p>
+                                                                            <p class="col_blue">AQ</p>
+                                                                        </div>
+                                                                    </div>
+                                                                   </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="accordion_head">
+                                                                        <h5 id="acc_head">Fitment Trail</h5>
+                                                                    </div>
+                                                                    <div class="accordion_body">
+                                                                    <div>
+                                                                        <p class="my-2">Fitment Plan Date <span>(Select Event Parts first)</span></p>
+                                                                        <input type="text" style="width: 80%; margin-left: 10%;" class="form-control">
+                                                                    </div>
+                                                                        <div>
+                                                                            <p class="my-2">Fitment Acceptence</p>
+                                                                            <input type="radio" name="radio" id="radio">
+                                                                            <label for="radio">Yes</label>
+                                                                            <input type="radio" name="radio" id="radio">
+                                                                            <label for="radio">No</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="accordion_head">
+                                                                        <h5 id="acc_head">Implementation</h5>
+                                                                    </div>
+                                                                    <div class="accordion_body">
+                                                                        <p>Vin Cut Off</p>
+                                                                        <span class="col_blue">hold</span>
+                                                                        <div class="my-2">
+                                                                            <label for="input">Implementation Plan Date (Select Event Parts First)</label>
+                                                                            <input type="text" class="form-control" style="width: 85%; margin-left: 7%;" >
+                                                                        </div>
+                                                                        <div class="my-2">
+                                                                            <label for="input">Implementation Starus</label>
+                                                                            <input type="text" class="form-control" style="width: 85%; margin-left: 7%;" >
+                                                                        </div>
+                                                                        <div class="my-2">
+                                                                            <label for="input">CI Contact</label>
+                                                                            <input type="text" class="form-control" style="width: 85%; margin-left: 7%;" >
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr class="my-3">
+                                                                <div class="row">
+                                                                    <div class="col-md-12 p-0">
+                                                                        <table class="table" id="parts"> 
+                                                                            <thead style="background: #043b54;color: #fff;">
+                                                                                <tr>
+                                                                                    <th scope="col">Function / <br> Action</th>
+                                                                                    <th scope="col">R&D - Design <br> Release</th>
+                                                                                    <th scope="col">Procurement - <br> Contracting</th>
+                                                                                    <th scope="col">Procurement - <br> Tooling Ordered</th>
+                                                                                    <th scope="col">Supplier Management - <br> Test Part Available</th>
+                                                                                    <th scope="col">Supplier Management - <br> Tooling Finished</th>
+                                                                                    <th scope="col">Supplier <br> Management - PPAP</th>
+                                                                                    <th scope="col">ME Readiness</th>
+                                                                                    <th scope="col">Fitment Trial</th>
+                                                                                    <th scope="col">MHE (Packaging) - <br> Production Readiness</th>
+                                                                                    <th scope="col">MHE - PR - <br> Production Readiness</th>
+                                                                                    <th scope="col" style="width: 7%;">SOP</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="col">Target</th>
+                                                                                    <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th scope="col">Actual</th>
+                                                                                    <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                  </div>
+                                                        </div>
+                                                      </div>
+                                                  
+                                                    </div>
+                                                    <div class="tab-pane fade accordion-item" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                                      <h2 class="accordion-header d-lg-none" id="headingTwo">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                          Accordion Item #2
+                                                        </button>
+                                                      </h2>
+                                                      <div id="collapseTwo" class="accordion-collapse collapse d-lg-block" aria-labelledby="headingTwo" data-bs-parent="#myTabContent">
+                                                        <div class="accordion-body">
+                                                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="tab-pane fade accordion-item" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                                      <h2 class="accordion-header d-lg-none" id="headingThree">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                          Accordion Item #3
+                                                        </button>
+                                                      </h2>
+                                                      <div id="collapseThree" class="accordion-collapse collapse d-lg-block" aria-labelledby="headingThree" data-bs-parent="#myTabContent">
+                                                        <div class="accordion-body">
+                                                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                        <!-- tab-content -->
+                                                        <div class="tab-content">
+                                                            
+                                                            <section id="tab-item-2">
+                                                                <div class="row">
+                                                                    <div class="accordion p-0" id="accordionExample1">
+                                                                        <div class="accordion-item">
+                                                                          <h2 class="accordion-header" id="headingOne">
+                                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                              General Part Number Details
+                                                                            </button>
+                                                                          </h2>
+                                                                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample1">
+                                                                            <div class="accordion-body">
+                                                                              <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <table class="table" id="accordion_table">
+                                                                                        <tr>
+                                                                                            <th style="width: 24%;">Planning</th>
+                                                                                            <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>Remarks</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th>Fitment Trial</th>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>Fitment Plan Date</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                           <tr>
+                                                                                            <td>VIN Fitment Accepetance</td>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                            <tr>
+                                                                                                <td>VIN Cutoff</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                           <tr>
+                                                                                            <th>Implementation</th>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                            <tr>
+                                                                                                <td>VIN Cutoff</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                           <tr>
+                                                                                            <td>Implementation Plan Date</td>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                           <tr>
+                                                                                            <td>Implementation Status</td>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                        </tr>
+                                                                                        <tr></tr>
+                                                                                    </table>
+                                                                                </div>
+                                                                              </div>
+                                                                              <div class="row">
+                                                                                <div class="col-md-12 p-0">
+                                                                                    <table class="table" id="parts"> 
+                                                                                        <thead style="background: #043b54;color: #fff;">
+                                                                                            <tr>
+                                                                                                <th scope="col">Function / <br> Action</th>
+                                                                                                <th scope="col">R&D - Design <br> Release</th>
+                                                                                                <th scope="col">Procurement - <br> Contracting</th>
+                                                                                                <th scope="col">Procurement - <br> Tooling Ordered</th>
+                                                                                                <th scope="col">Supplier Management - <br> Test Part Available</th>
+                                                                                                <th scope="col">Supplier Management - <br> Tooling Finished</th>
+                                                                                                <th scope="col">Supplier <br> Management - PPAP</th>
+                                                                                                <th scope="col">ME Readiness</th>
+                                                                                                <th scope="col">Fitment Trial</th>
+                                                                                                <th scope="col">MHE (Packaging) - <br> Production Readiness</th>
+                                                                                                <th scope="col">MHE - PR - <br> Production Readiness</th>
+                                                                                                <th scope="col" style="width: 7%;">SOP</th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <th scope="col">Target</th>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="col">Actual</th>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="accordion-item">
+                                                                          <h2 class="accordion-header" id="headingTwo">
+                                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                              Part Details
+                                                                            </button>
+                                                                          </h2>
+                                                                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample1">
+                                                                            <div class="accordion-body">
+                                                                                <div class="row mt-1">
+                                                                                    <div class="col-md-12" style="background-color: #fff;border-radius: 6px;overflow-y: auto;">
+                                                                                        <table class="table mt-3 user_master" id="part_deatils">
+                                                                                            <thead style="background: #043b54;color: #fff;">
+                                                                                                <tr>
+                                                                                                    <th style="border: 1px solid #fff !important;" colspan="10" class="text-center">Add Part</th>
+                                                                                                    <th style="border: 1px solid #fff !important;" colspan="3" class="text-center">Delete Part</th>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="col">S.No</th>
+                                                                                                    <th scope="col" style="width: 10%;">Part No</th>
+                                                                                                    <th scope="col" style="width: 10%;">Series PR?</th>
+                                                                                                    <th scope="col">Series PR</th>
+                                                                                                    <th scope="col">PR Raised Date</th>
+                                                                                                    <th scope="col">SPOT Buy PR?</th>
+                                                                                                    <th scope="col">SPOT Buy PR</th>
+                                                                                                    <th scope="col">Target Date</th>
+                                                                                                    <th scope="col" style="width: 10%;">Buyer Name</th>
+                                                                                                    <th scope="col">Saving Cost</th>
+                                                                                                    <th scope="col" style="width: 10%;border-left: 1px solid #fff;">Part No</th>
+                                                                                                    <th scope="col">Obsoletion</th>
+                                                                                                    <th scope="col">Buyer Name</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <th scope="row">1</th>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <!-- delete part -->
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td style="width: 10%;border-left: 1px solid #fff;"><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                </div>
+                                                            </section>
+                                                            
+                                                            <section id="tab-item-3">
+                                                                <div class="row">
+                                                                    <div class="accordion p-0" id="accordionExample2">
+                                                                        <div class="accordion-item">
+                                                                          <h2 class="accordion-header" id="headingOne">
+                                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                              General Part Number Details
+                                                                            </button>
+                                                                          </h2>
+                                                                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
+                                                                            <div class="accordion-body">
+                                                                              <div class="row">
+                                                                                <div class="col-md-12">
+                                                                                    <table class="table" id="accordion_table">
+                                                                                        <tr>
+                                                                                            <th style="width: 24%;">Planning</th>
+                                                                                            <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>Remarks</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th>Fitment Trial</th>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>Fitment Plan Date</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                           <tr>
+                                                                                            <td>VIN Fitment Accepetance</td>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                            <tr>
+                                                                                                <td>VIN Cutoff</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                           <tr>
+                                                                                            <th>Implementation</th>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                            <tr>
+                                                                                                <td>VIN Cutoff</td>
+                                                                                                <td></td>
+                                                                                            </tr>
+                                                                                           <tr>
+                                                                                            <td>Implementation Plan Date</td>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                           <tr>
+                                                                                            <td>Implementation Status</td>
+                                                                                            <td></td>
+                                                                                           </tr>
+                                                                                        </tr>
+                                                                                        <tr></tr>
+                                                                                    </table>
+                                                                                </div>
+                                                                              </div>
+                                                                              <div class="row">
+                                                                                <div class="col-md-12 p-0">
+                                                                                    <table class="table" id="parts"> 
+                                                                                        <thead style="background: #043b54;color: #fff;">
+                                                                                            <tr>
+                                                                                                <th scope="col">Function / <br> Action</th>
+                                                                                                <th scope="col">R&D - Design <br> Release</th>
+                                                                                                <th scope="col">Procurement - <br> Contracting</th>
+                                                                                                <th scope="col">Procurement - <br> Tooling Ordered</th>
+                                                                                                <th scope="col">Supplier Management - <br> Test Part Available</th>
+                                                                                                <th scope="col">Supplier Management - <br> Tooling Finished</th>
+                                                                                                <th scope="col">Supplier <br> Management - PPAP</th>
+                                                                                                <th scope="col">ME Readiness</th>
+                                                                                                <th scope="col">Fitment Trial</th>
+                                                                                                <th scope="col">MHE (Packaging) - <br> Production Readiness</th>
+                                                                                                <th scope="col">MHE - PR - <br> Production Readiness</th>
+                                                                                                <th scope="col" style="width: 7%;">SOP</th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <th scope="col">Target</th>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="col">Actual</th>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields" placeholder="Date Picker"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                                <td><input type="text" class="form-control input_fields"></td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <div class="accordion-item">
+                                                                          <h2 class="accordion-header" id="headingTwo">
+                                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                              Part Details
+                                                                            </button>
+                                                                          </h2>
+                                                                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
+                                                                            <div class="accordion-body">
+                                                                                <div class="row mt-1">
+                                                                                    <div class="col-md-12" style="background-color: #fff;border-radius: 6px;overflow-y: auto;">
+                                                                                        <table class="table mt-3 user_master" id="part_deatils">
+                                                                                            <thead style="background: #043b54;color: #fff;">
+                                                                                                <tr>
+                                                                                                    <th style="border: 1px solid #fff !important;" colspan="10" class="text-center">Add Part</th>
+                                                                                                    <th style="border: 1px solid #fff !important;" colspan="3" class="text-center">Delete Part</th>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <th scope="col">S.No</th>
+                                                                                                    <th scope="col" style="width: 10%;">Part No</th>
+                                                                                                    <th scope="col" style="width: 10%;">Series PR?</th>
+                                                                                                    <th scope="col">Series PR</th>
+                                                                                                    <th scope="col">PR Raised Date</th>
+                                                                                                    <th scope="col">SPOT Buy PR?</th>
+                                                                                                    <th scope="col">SPOT Buy PR</th>
+                                                                                                    <th scope="col">Target Date</th>
+                                                                                                    <th scope="col" style="width: 10%;">Buyer Name</th>
+                                                                                                    <th scope="col">Saving Cost</th>
+                                                                                                    <th scope="col" style="width: 10%;border-left: 1px solid #fff;">Part No</th>
+                                                                                                    <th scope="col">Obsoletion</th>
+                                                                                                    <th scope="col">Buyer Name</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <th scope="row">1</th>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <!-- delete part -->
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td style="width: 10%;border-left: 1px solid #fff;"><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                    <td><input type="text" class="form-control input_fields"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                                </div>
+                                                            </section>
+                                                            <section id="tab-item-4">
+                                                                <h2>Four</h2>
+                                                            </section>
+                                                            <section id="tab-item-5">
+                                                                <h2>Five</h2>
+                                                            </section>
+                                                            <section id="tab-item-6">
+                                                                <h2>Six</h2>
+                                                            </section>
+                                                            <section id="tab-item-7">
+                                                                <h2>Seven</h2>
+                                                            </section>
+                                                            <section id="tab-item-8">
+                                                                <h2>Eight</h2>
+                                                            </section>
+                                                            <section id="tab-item-9">
+                                                                <h2>Nine</h2>
+                                                            </section>
+                                                            <section id="tab-item-10">
+                                                                <h2>Ten</h2>
+                                                            </section>
+                                                            <section id="tab-item-11">
+                                                                <h2>Eleven</h2>
+                                                            </section>
+                                                            <section id="tab-item-12">
+                                                                <h2>Twelve</h2>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 my-3">
+                                                <button class="back">Back</button>
+                                                <button class="bypass" data-bs-toggle="modal" data-bs-target="#upload_modal">By Pass</button>
+                                            </div>
+                                            <div class="col-md-6 text-end mt-3 p-0">
+                                                <button class="submit">Submit</button>
+                                                <button class="upload">Upload Documents</button>
+                                            </div>
+                                        </div>
+                                    </section>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/index.js">
+       
+     </script>
+     <!--By Pass Modal -->
+<div class="modal fade" id="upload_modal" tabindex="-1" aria-labelledby="upload_modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="padding: 0 7px;">
+          <!-- <h5 class="modal-title" id="upload_modalLabel"></h5> -->
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body text-center">
+            <div class="modal_head row">
+                <div class="col-md-8 modal_left">
+                    <h3 id="head_content_left">Select Stackholder</h3>
+                </div>
+                <div class="col-md-4 modal_right">
+                    <h3 id="head_content_right">Person Responsible</h3>
+                </div>
+                <hr>
+            <div class="modal_body row">
+                <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>LCIM</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_blue">Naveen Chand</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Research & Development (R&D)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Procurement</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Supply Chain Management - Quality (SCMQ)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_blue">Prince M</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Manufacturing Engineering (ME)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_blue">Senthil Arasu S</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Meterial Handling Engineering Packaging (MHE)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>In Plant Logistics (IPL)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Part Quality (PQ)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Material Requirement Planning (MRP)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Production</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Line Quality (LQ)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <input type="checkbox" id="check">
+                    <span>Material Handling Engineering Plant Readiness (MHEPR)</span>
+                </div>
+                <div class="col-md-4">
+                    <p class="col_red">Empty</p>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="modal-footer" style="padding: 0 7px;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-size: 12px;padding: 1px 7px;">Cancel</button>
+          <button type="button" class="add_new" style="padding: 1px 7px;">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+</body>
+
+</html>

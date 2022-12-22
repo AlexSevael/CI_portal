@@ -1,0 +1,329 @@
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/popup.css">
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+        </script>
+    <!-- font family -->
+    <link href="assets/bootstrap/font-family.css" rel="stylesheet">
+    <style>
+        .add_new {
+            color: #fff !important;
+            transition: all .3s;
+        }
+
+        tr:hover .add_new {
+            background-color: #fff !important;
+            color: #000 !important;
+        }
+
+        tr:hover a.ken_no {
+            color: #fff !important;
+        }
+
+        a.ken_no {
+            color: #043b54;
+            transition: all .3s;
+            font-weight: 700;
+        }
+
+        #closed {
+            background-color: rgb(235, 212, 12);
+            color: #f5f6f1;
+            border: none;
+            padding: 5px;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        .modalno {
+            background-color: #000;
+            color: #fff;
+            border-radius: 3px;
+        }
+
+        .modalyes {
+            background-color: #043b54;
+            color: #fff;
+            border-radius: 3px;
+        }
+        
+    </style>
+</head>
+
+<body style="background-color: #f5f6f1;">
+    <div class="container-fluid bg_color">
+        <div class="row">
+            <input type="checkbox" id="menu-toggle" />
+            <label id="trigger" for="menu-toggle"></label>
+            <label id="burger" for="menu-toggle"></label>
+            <ul id="menu">
+                <li><a class="itel_list" href="kem_managerlist.html">KEM</a></li>
+                <li><a class="itel_list" href="user_master.html">Masters</a></li>
+                <!-- <li><a class="itel_list" href="partconsumption.html">Part Consumption</a></li> -->
+            </ul>
+            <div class="col-md-12 p-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 bg_image">
+                            <div class="row mt-2">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4 text-center">
+                                    <img src="assets/images/logo.png" class="logo" alt="" onclick="landing()">
+                                </div>
+                                <div class="col-md-4 text-end pt-1">
+                                    <img src="assets/images/logout.png" title="Logout" class="logout" alt=""
+                                        onclick="logout()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start -->
+                    <div>
+                        <p style="float:right;"><span style="color: #043b54;">Planner Screen</span> &nbsp; &gt; 
+                            Inventory Correction</p>
+                    </div>
+                    <section class="container-fluid bg_card mt-4 mb-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="headers ps-2"> Inventory Correction </h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" style="background-color: #f5f6f1;">
+                                <section class="table_bg" style="margin: 14px 21px 14px 21px;">
+                                    <div class="row mt-2">
+                                        <div class="col-md-2 p-0">
+                                            <button class="add_new">CSV</button>
+                                            <button class="add_new">Excel</button>
+                                            <button class="add_new">PDF</button>
+                                            <button class="add_new">Print</button>
+                                            <div style="margin: 2px;">
+                                                <label for="">Show</label>
+                                                <select>
+                                                    <option value="10">10</option>
+                                                    <option value="9">9</option>
+                                                    <option value="8">8</option>
+                                                    <option value="7">7</option>
+                                                    <option value="6">6</option>
+                                                    <option value="5">5</option>
+                                                    <option value="4">4</option>
+                                                    <option value="3">3</option>
+                                                    <option value="2">2</option>
+                                                    <option value="1">1</option>
+                                                </select>
+                                                <label for="">entries</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 pe-0"></div>
+                                        <div class="col-md-2 pe-0" style="display:flex ;">
+                                            <label>Search:&nbsp;</label>
+                                            <input type="search" class="form-control"
+                                                style="padding: 0 4px !important;height: 26px;">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col-md-12"
+                                            style="background-color: #fff;border-radius: 6px;overflow-y: auto;">
+                                            <table class="table mt-3 user_master">
+                                                <thead style="background: #043b54;color: #fff;">
+                                                    <tr>
+                                                        <th scope="col">S.No &nbsp; <i class="fa-solid fa-caret-up"
+                                                                disabled></i></th>
+                                                        <th scope="col" style="position: relative;">Project &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">Received Date &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">KEM No &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">CR NO &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">Closure Status &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">Co-KEM &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">Description &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">Process &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                        <th scope="col">Date of Input &nbsp;
+                                                            <i class="fa-solid fa-caret-up"
+                                                                style="position: absolute; margin: -2px;"> </i>
+                                                            <i class="fa-solid fa-caret-down" style="margin: -2px;"></i>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>MDT</td>
+                                                        <td>22-Dec-22</td>
+                                                        <td style="cursor: pointer;">
+                                                            <a class="ken_no" data-bs-toggle="modal"
+                                                                data-bs-target="#exampleModal">ZAP0083918</a>
+                                                        </td>
+                                                        <td>No CR</td>
+                                                        <td>
+                                                            <button id="closed">Closed</button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="add_new">View</button>
+                                                        </td>
+                                                        <td>test KEM1</td>
+                                                        <td>Normal Mode</td>
+                                                        <td>07-Nov-22</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="row">
+                                                <div class="col-md-10">Showing 1 to 1 of 1 entries</div>
+                                                <div class="col-md-2" style="float: right;">
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">Previous</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">Next</a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"> </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close" style="background-color: black; color: #f5f6f1;">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Have you made the changes in the Inventory ?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="modalno" data-dismiss="modal">No</button>
+                                                <button type="button" class="modalyes" data-bs-toggle="modal"
+                                                data-bs-target="#ModalYes">Yes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                  <!-- Modal 1 -->
+                                  <div class="modal fade" id="ModalYes" tabindex="-1" role="dialog"
+                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel"> </h5>
+                                              <button type="button" class="close" data-dismiss="modal"
+                                                  aria-label="Close" style="background-color: black; color: #f5f6f1;">
+                                                  <span aria-hidden="true">&times;</span>
+                                              </button>
+                                          </div>
+                                          <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                             <label>Final Decision on Old part</label> 
+                                             <select class="form-control input_fields " id="Project">
+                                                <option value="null">--Select--</option>
+                                                <option>Consume All Parts</option>
+                                                <option>Take Old parts from Line After Implementation</option>
+                                                <option>Scrap Old Parts Immlementation</option>
+                                                <option>Not Applicable</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                        <label>Final Decision on Old part</label> 
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <input type="date" class="form-control input_fields" placeholder="Enter...">
+                                    </div>
+                                    </div>
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="modalno" data-dismiss="modal">No</button>
+                                              <button type="button" class="modalyes" data-bs-toggle="modal"
+                                              data-bs-target="#ModalSubmit">Submit</button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                                 <!-- Modal 2-->
+                                 <div class="modal fade" id="ModalSubmit" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                 <div class="modal-dialog" role="document">
+                                     <div class="modal-content">
+                                         <div class="modal-header">
+                                             <h5 class="modal-title" id="exampleModalLabel"> </h5>
+                                             <button type="button" class="close" data-dismiss="modal"
+                                                 aria-label="Close" style="background-color: black; color: #f5f6f1;">
+                                                 <span aria-hidden="true">&times;</span>
+                                             </button>
+                                         </div>
+                                         <div class="modal-body">
+                                            FINAL update has been done for this KEM
+                                         </div>
+                                         <div class="modal-footer">
+                                             <!-- <button type="button" class="modalno" data-dismiss="modal">No</button> -->
+                                             <button type="button" class="modalyes">Okay</button>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="assets/js/index.js">
+
+    </script>
