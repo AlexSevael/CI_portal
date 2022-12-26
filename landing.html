@@ -81,24 +81,8 @@
             padding: 2px 9px;
         }
 
-        .route_card {
-            position: relative;
-            cursor: pointer;
-            left: 70px;
-            top: 66%;
-            box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-            padding: 15px;
-            width: 82px;
-            border-radius: 10%;
-            transition: .3s all;
-            background: #247386;
-        }
-
-        .route_card:hover {
-            border-radius: 50%;
-        }
-
         .route_box {
+            position: relative;
             border: 2px solid #fff;
             border-radius: 50%;
             height: 53px;
@@ -107,34 +91,30 @@
 
         .box_img {
             width: 29px;
-            position: absolute;
-            top: 28px;
-            left: 27px;
-            right: 0;
-            bottom: 0;
-        }
+    position: absolute;
+    top: 12px;
+    left: 11px;
+    right: 0;
+    bottom: 0;
 
-        .ad_ {
-            position: relative;
-            left: -56px;
-            height: 0px;
-            top: 59px;
         }
-
-        .c2_ {
-            left: 92px;
-        }
-
-        .c3_ {
-            left: 109px;
-        }
-
-        .c4_ {
-            left: 125px;
-        }
-
-        .c5_ {
-            left: 141px;
+        .hover_box {
+            box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    padding: 15px;
+    width: 64%;
+    margin-left: auto;
+    border-radius: 10%;
+    transition: .3s all;
+    background: #247386;
+    cursor: pointer;
+    margin-right: auto;
+}
+.colms {
+    width: 20%;
+    margin-top: 29px;
+}
+.hover_box:hover {
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -288,79 +268,84 @@
                 </div>
             </div>
             <div class="col-md-6 mt-3" style="position: relative;">
-                <div class="row mt-5 pt-1">
-                    <div class="col-md-2 ad_">
-                        <div class="route_card c1_" onclick="kem_myworklist()" title="Reports">
+                <div class="row mt-5">
+                    <div class="col-md-12" style="display: contents;">
+                        <div class="colms"onclick="kem_myworklist()">
+                            <div class="hover_box" title="Reports">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/iconDashboard.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_">
-                        <div class="route_card c2_" title="Boost Count">
+                        </div>
+                        <div class="colms" title="Boost Count">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/iconDesigner.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_">
-                        <div class="route_card c3_" title="Planner Worklist">
+                        </div>
+                        <div class="colms" title="Planner Worklist">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/iconProejctCreation.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_">
-                        <div class="route_card c4_" title="Open Points">
+                        </div>
+                        <div class="colms" title="Open Points">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/iconTestKickoff.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_">
-                        <div class="route_card c5_" title="KEM Manager">
+                        </div>
+                        <div class="colms" title="KEM Manager">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/iconTestReports.png" alt="">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row mt-5 pt-4">
-                    <div class="col-md-2 ad_ mt-5">
-                        <div class="route_card c1_" title="Monthly Plan">
+                        </div>
+                        <div class="colms" title="Monthly Plan">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/KEM Manager.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_ mt-5">
-                        <div class="route_card c2_" title="Weekly Meeting">
+                        </div>
+                        <div class="colms" title="Weekly Meeting">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/Meeting 2.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_ mt-5">
-                        <div class="route_card c3_" title="Localization Count">
+                        </div>
+                        <div class="colms" title="Localization Count">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/location.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_ mt-5">
-                        <div class="route_card c4_" title="FQT Count">
+                        </div>
+                        <div class="colms" title="FQT Count">
+                            <div class="hover_box">
                             <div class="route_box">
-                                <img class="box_img" src="assets/images/lorry.png" style="top: 31px;
-                                width: 34px;
-                                left: 24px;" alt="">
+                                <img class="box_img" src="assets/images/lorry.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2 ad_ mt-5">
-                        <div class="route_card c5_" title="Market Count">
+                        </div>
+                        <div class="colms" title="Market Count">
+                            <div class="hover_box">
                             <div class="route_box">
                                 <img class="box_img" src="assets/images/iconImageFile.png" alt="">
                             </div>
+                        </div>
+                        </div>
+                        <div class="colms">
+                            <div class="hover_box" title="KEM Assignment" onclick="kem_manager()">
+                            <div class="route_box">
+                                <img class="box_img" src="assets/images/iconDashboard.png" alt="">
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
