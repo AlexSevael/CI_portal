@@ -24,40 +24,90 @@
         }
 
         .card {
-            background-color: #043b54 !important;
+            background-color: #202026c7 !important;
             color: #fff !important;
-            padding: 61px 42px;
             cursor: pointer;
             font-weight: bold;
+            font-weight: bold;
+            padding: 9px 24px;
+            height: 95%;
+            transition: .1s all;
         }
 
         .card:hover {
-            background-color: #fff !important;
-            color: #043b54 !important;
+            background-color: #043b54a6 !important;
+        }
+
+        .login_image {
+            width: 100% !important;
+            position: unset !important;
+            /* top: 13%; */
+            border-radius: 0% !important;
+            height: 100vh;
+        }
+
+        .card-body {
+            padding: 11px 0 0 0;
+        }
+
+        .added_bg_img {
+            background-image: url(assets/images/main_bg_image.png);
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh !important;
+            background-size: cover;
+            /* backdrop-filter: blur(2px); */
+        }
+
+        img.card-img-top {
+            width: 100%;
+            height: 109px;
+            object-fit: cover;
         }
     </style>
 </head>
 
-<body>
-    <div class="container-fluid" style="padding:58px 70px 0 58px">
+<body class="added_bg_img">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-8">
-                <img src="assets/images/innerpagetopbg.jpg" alt="" class="main_bg">
-                <img src="assets/images/logo_image.jpg" alt="" class="login_image">
-            </div>
-            <div class="col-md-4 mt-5" style="z-index: 1;">
-                <div class="row mt-5">
-                    <div class="col-md-6 mt-5">
-                        <div class="card">
-                            CI Portal
-                        </div>
+            <div class="col-md-12 bg_image">
+                <div class="row mt-2">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center">
+                        <img src="assets/images/logo.png" class="logo" alt="">
                     </div>
-                    <div class="col-md-6 mt-5">
-                        <div class="card">
-                            CI Portal
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-12 col-md-10 p-0"> -->
+            <!-- <img src="assets/images/innerpagetopbg.jpg" alt="" class="main_bg"> -->
+            <!-- <img src="assets/images/logo_image.jpg" alt="" class="login_image"> -->
+            <!-- </div> -->
+            <!-- <div class="col-md-12 mt-5" style="z-index: 1;"> -->
+            <div class="row mt-5">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="assets/images/card1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">CI Portal</p>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="assets/images/card2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Launch Gate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
